@@ -23,7 +23,7 @@ interface Props {
     weight?:"regular"|"medium";
     className?: string
     component?:"h1"|"h2"|"h3"|"h4"|"h5"|"div"|"p"|"span";
-    children:React.ReactNode;
+    children?:React.ReactNode;
 }
 
 export const Typography = ({
