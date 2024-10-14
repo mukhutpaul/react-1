@@ -1,23 +1,26 @@
+import clsx from "clsx";
 import Image from "next/image";
 
 interface Props {
-    size?:"small" | "medium" | "large"
+    size?:"small"|"medium" |"large";
+    src: string;
+    alt: string;
 } 
-export const Avatar = ({size = "medium"} : Props) => {
-    let sizeStyles: string;
+export const Avatar = ({size = "medium",src,alt} : Props) => {
+    let sizeStyles: string = "";
 
     switch (size) {
 
         case "small":
-            sizeStyles=""
+            sizeStyles="w-[24px] h-[24px]"
             break
 
         case "medium"://default
-            sizeStyles = ""
+            sizeStyles="w-[34px] h-[34px]"
             break
 
         case "large":
-            sizeStyles = ""
+            sizeStyles="w-[500px] h-[500px]"
             break
     
         default:
@@ -25,14 +28,18 @@ export const Avatar = ({size = "medium"} : Props) => {
     }
 
     return(
-        <>
+        <div className={clsx(sizeStyles,"bg-gray-400 rounded-full relative")}>
            <Image
-           src = "/assets/images/inpp.jpg"
-           alt="Avatar Inpp"
-           width={50}
-           height = {50}
+           fill
+           src={src}
+           alt={alt}
            
-           />
-        </>
+        //    width={50}
+        //    height = {50}
+           className="object-cover object-center rounded-full "
+           
+           /> 
+           
+        </div>
     )
 }

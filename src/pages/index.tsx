@@ -1,5 +1,6 @@
 
 import { Seo } from "@/ui/components/seo";
+import { Avatar } from "@/ui/design_system/avatar/avatar";
 import { Logo } from "@/ui/design_system/logo/logo";
 import { Button } from "@/ui/design_system/typography/button/botton";
 import { Spinner } from "@/ui/design_system/typography/spinner/spinner";
@@ -84,6 +85,12 @@ export default function Home(){
      <Logo size="small"/>
      <Logo size="large"/>
      <Logo/>
+    </div>
+
+    <div className="flex items-center gap-4 p-10">
+     <Avatar src="/assets/images/anglais 2.png" alt="Avatar Inpp"size="small"/>
+     <Avatar src="/assets/images/anglais 2.png" alt="Avatar Inpp"/>
+     <Avatar src="/assets/images/anglais 2.png" alt="Avatar Inpp" size="large"/>
     </div>
 
     
