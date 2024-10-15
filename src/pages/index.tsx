@@ -1,10 +1,13 @@
 
-import { Seo } from "@/ui/components/seo";
+import { Containers } from "@/ui/components/container/container";
+import { Navigation } from "@/ui/components/navigation/navigation";
+import { Seo } from "@/ui/components/seo/seo";
 import { Avatar } from "@/ui/design_system/avatar/avatar";
 import { Logo } from "@/ui/design_system/logo/logo";
 import { Button } from "@/ui/design_system/typography/button/botton";
 import { Spinner } from "@/ui/design_system/typography/spinner/spinner";
 import { Typography } from "@/ui/design_system/typography/typography";
+import { Container } from "postcss";
 import { RiUser6Fill } from "react-icons/ri";
 
 
@@ -14,7 +17,8 @@ export default function Home(){
     <>
   
     <Seo title="App Nextjs" description="description" />
-    <div className="max-w-6xl p-10 mx-auto space-y-5">
+    <Navigation/>
+    <Containers className="py-10 space-y-10">
       
     <div className="space-y-2">
     <Typography variant="caption2" weight="medium" > 
@@ -144,8 +148,8 @@ export default function Home(){
     icon={{icon : RiUser6Fill }}/>
     </div>
     
-    </div>  
-
+   
+    </Containers>
     
   </>
 
