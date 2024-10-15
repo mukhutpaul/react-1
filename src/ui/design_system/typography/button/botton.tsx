@@ -90,6 +90,7 @@ className={clsx(
     icoSize,
     sizeStyles,
     "relative",
+    "animate",
     isLoading && "cursor-wait")}
 onClick={() => console.log("click")}
 disabled = {disabled}
