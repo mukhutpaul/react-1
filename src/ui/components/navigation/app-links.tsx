@@ -35,18 +35,18 @@ import { RiLinkedinFill, RiStackFill, RiStackshareFill, RiStackshareLine, RiYout
 
     {
         label:"Connexion",
-        baseUrl:"/#",
+        baseUrl:"/index",
         type:"internal",
     },
     {
         label:"Inscription",
-        baseUrl:"/#",
+        baseUrl:"/inscription",
         type:"internal",
     },
 
     {
         label:"Mot de passe oublié",
-        baseUrl:"/https://youtube.com/@jeanpaulmukhut534",
+        baseUrl:"/mot-de-passe-perdu",
         type:"internal",
     },
 ]

@@ -35,7 +35,7 @@ export const Footer=() => {
                     </Typography>
 
                     <a href="https://youtube.com/@jeanpaulmukhut534" target="_blank">
-                    <Image src="/assets/images/inpp.jpg"
+                    <Image src="/assets/svg/YTB.svg"
                     width={229}
                     height={216}
                     alt="Mukhut Jp | Youtube"/>
