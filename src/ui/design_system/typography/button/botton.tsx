@@ -2,6 +2,8 @@ import { IconProp } from "@/types/iconProps";
 import clsx from "clsx";
 import React from "react";
 import { Spinner } from "../spinner/spinner";
+import { LinkType } from "@/lib/link-type";
+import Link from "next/link";
 
 interface Props  { 
     size?: "small" | "medium" | "large";
@@ -11,8 +13,11 @@ interface Props  {
     iconPosition?: "left" | "right";
     disabled?: boolean;
     isLoading?: boolean;
-
     children? : React.ReactNode;
+    baseUrl?:string,
+    linkType?:LinkType
+    action?:Function
+    
 }
 export const Button = ({
     size = "medium",
@@ -23,6 +28,9 @@ export const Button = ({
     disabled,
     isLoading,
     children,
+    baseUrl,
+    linkType="internal",
+    action = () =>{},
 
 }: Props) => {
     console.log(icon)
@@ -54,7 +62,7 @@ export const Button = ({
             }
 
             if (iconTheme == "gray"){
-                variantStyle ="bg-gray-700 hover:bg-gray-600 text-white rounded-full"
+                variantStyle ="bg-gray-800 hover:bg-gray-700 text-white rounded-full"
             }
 
            
@@ -65,38 +73,31 @@ export const Button = ({
     switch (size) {
 
         case "small":
-            sizeStyles ="text-caption3 font-medium px-[14px] py-[12px]";
+            sizeStyles =`text-caption3 font-medium ${variant==="ico"?"px-[15px] py-[15px]":"px-[14px] py-[12px]"}`;
             icoSize=18;
             break;
 
         case "medium":
-            sizeStyles ='text-caption2 font-medium ${} px-[18px] py-[15px]';
+            sizeStyles =`text-caption2 font-medium ${variant==="ico"?"px-[20px] py-[20px]":"px-[18px] py-[15px]"}`;
             icoSize =20;   
             break;
 
         case "large":
-            sizeStyles ='text-caption1 font-medium ${} px-[22px] py-[18px]'; 
+            sizeStyles =`text-caption1 font-medium ${variant==="ico"?"px-[30px] py-[30px]":"px-px-[22px] py-[18px]"} `; 
             icoSize = 24;       
             break;
     
       
     }
-return (
-<>
-<button
-type="button"
-className={clsx(
-    variantStyle,
-    icoSize,
-    sizeStyles,
-    "relative",
-    "animate",
-    isLoading && "cursor-wait")}
-onClick={() => console.log("click")}
-disabled = {disabled}
->
 
-    {isLoading && (
+const handleClick =() =>{
+    if(action){
+        action()
+    }
+}
+const buttonContent =(
+    <>
+      {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
             {variant === "accent" || variant==="ico"? <Spinner size="small" variant="white"/>
             :(<Spinner size="small"/>
@@ -122,10 +123,41 @@ disabled = {disabled}
     </div>
     } 
    </div>
+    </>
+);
+
+const buttonElement=(
+    <button
+type="button"
+className={clsx(
+    variantStyle,
+    icoSize,
+    sizeStyles,
+    "relative",
+    "animate",
+    isLoading && "cursor-wait")}
+onClick={handleClick}
+disabled = {disabled}
+> 
+{buttonContent}
 </button>
-
-
-</>
-
+    
 )
+
+if(baseUrl){
+   if(linkType === LinkType.EXTERNAL){
+    return(
+        <a href={baseUrl} target="_blank">
+            {buttonElement}
+        </a>
+    )
+   }else {
+    return(
+        <Link href={baseUrl}>{buttonElement}</Link>
+    )
+   }
+    
+}
+
+return buttonElement
 }

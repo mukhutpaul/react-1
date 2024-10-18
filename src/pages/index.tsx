@@ -1,5 +1,6 @@
 
 import { Containers } from "@/ui/components/container/container";
+import { Footer } from "@/ui/components/navigation/footer";
 import { Navigation } from "@/ui/components/navigation/navigation";
 import { Seo } from "@/ui/components/seo/seo";
 import { Avatar } from "@/ui/design_system/avatar/avatar";
@@ -18,7 +19,7 @@ export default function Home(){
   
     <Seo title="App Nextjs" description="description" />
     <Navigation/>
-    
+    <Footer/>
     
   </>
 
