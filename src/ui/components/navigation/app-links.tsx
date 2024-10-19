@@ -35,18 +35,18 @@ import { RiLinkedinFill, RiStackFill, RiStackshareFill, RiStackshareLine, RiYout
 
     {
         label:"Connexion",
-        baseUrl:"/index",
+        baseUrl:"/connexion",
         type:"internal",
     },
     {
         label:"Inscription",
-        baseUrl:"/inscription",
+        baseUrl:"/connexion/inscription",
         type:"internal",
     },
 
     {
         label:"Mot de passe oublié",
-        baseUrl:"/mot-de-passe-perdu",
+        baseUrl:"/connexion/mot-de-passe-perdu",
         type:"internal",
     },
 ]
