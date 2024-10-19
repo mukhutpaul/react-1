@@ -25,7 +25,7 @@ export const RegisterForm = ({form}:Props) =>{
           type="email"
           register={register}
           errors = {errors}
-          errorMge="Tu dois renseigner ce champ"
+          errorMsg="Tu dois renseigner ce champ"
           id ="email"
         />
 
