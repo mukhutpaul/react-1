@@ -19,7 +19,7 @@ interface Props {
     |"caption3"
     |"caption4"
     |"caption5";
-    theme?: "black"|"gray"|"white"|"primary"|"secondary";
+    theme?: "black"|"gray"|"white"|"primary"|"secondary" | "danger"|"success" |"warning";
     weight?:"regular"|"medium";
     className?: string
     component?:"h1"|"h2"|"h3"|"h4"|"h5"|"div"|"p"|"span";
@@ -104,6 +104,20 @@ export const Typography = ({
             case "primary":
                 colorStyle = "text-primary"
                     
+                break;
+
+            case "danger":
+                colorStyle = "text-alert-danger"
+                        
+                break;
+            case "success":
+                colorStyle = "text-alert-success"
+                            
+                break;
+
+            case "warning":
+                colorStyle = "text-alert-warning"
+                                
                 break;
 
             case "secondary":

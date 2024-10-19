@@ -13,8 +13,6 @@ export const BreadCrumbs = () => {
     const lastSegment = segments[segments.length - 1]
     segments[0] = "accueil"
 
-    console.log("router",aspath)
-    console.log("segment",segments)
 
     const view = segments.map((path,index) =>(
         <div key={uuidv4()} className="flex items-center">
