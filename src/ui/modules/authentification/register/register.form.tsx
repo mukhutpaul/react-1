@@ -35,7 +35,7 @@ export const RegisterForm = ({form}:Props) =>{
           type="password"
           register={register}
           errors = {errors}
-          errorMge="Tu dois renseigner ce champ"
+          errorMsg="Tu dois renseigner ce champ"
           id ="password"
         />
 
@@ -44,7 +44,7 @@ export const RegisterForm = ({form}:Props) =>{
           placeholder ="Comment tu nous as connu ?"
           register={register}
           errors = {errors}
-          errorMge="Tu dois renseigner ce champ"
+          errorMsg="Tu dois renseigner ce champ"
           id ="how_did_hear"
         />
 
