@@ -143,11 +143,11 @@ className={clsx(
     sizeStyles,
     "relative",
     "animate",
-    isLoading && "cursor-wait",
+    isLoading && "cursor-not-allowed",
     fullwidth && "w-full"
 )}
 onClick={handleClick}
-disabled = {disabled}
+disabled = {disabled || isLoading ? true: false}
 > 
 {buttonContent}
 </button>

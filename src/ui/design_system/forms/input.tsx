@@ -23,12 +23,13 @@ export const Input = ({
     id,
     required = true,
     isAutoCompleted=false}:Props) =>{
-        console.log('error',errors)
+
     return(
         <div className="space-y-2">
         <input type={type} 
         placeholder={placeholder}
         className={clsx(
+            isLoading && "cursor-not-allowed",
             errors[id]?"placeholder-alert-danger text-alert-danger":"placeholder-gray-600",
             "w-full p-4 font-light border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-primary")}
         disabled={isLoading} 

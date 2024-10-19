@@ -1,5 +1,5 @@
 export interface FormsType {
-    control:any;
+    control?:any;
     onSubmit:any;
     errors: any;
     isLoading:any;
@@ -10,4 +10,13 @@ export interface RegisterFormFieldsType{
     email: string;
     password:string;
     how_did_hear: string;
+}
+
+export interface LoginFormFieldsType{
+    email: string;
+    password:string;
+}
+
+export interface ForgetFormFieldsType{
+    email: string;
 }

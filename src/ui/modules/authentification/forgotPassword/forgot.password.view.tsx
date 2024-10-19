@@ -5,8 +5,12 @@ import { Box } from "@/ui/design_system/box/box"
 import { Containers } from "@/ui/components/container/container"
 import Image from "next/image"
 import { ForgotPasswordForm } from "./forgot.passeword.form"
+import { FormsType } from "@/types/form"
 
-export const ForgotPasswordView= ()=>{
+interface Props {
+    form:FormsType
+}
+export const ForgotPasswordView= ({form}:Props)=>{
     return(
         <Containers className="grid grid-cols-2 gap-20 mb-32">
           
@@ -32,7 +36,9 @@ export const ForgotPasswordView= ()=>{
                     </Typography>        
                        
         </div>
-        <ForgotPasswordForm/>
+        <ForgotPasswordForm
+        form ={form}
+        />
        
                
               </Box>

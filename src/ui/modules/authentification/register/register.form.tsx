@@ -8,7 +8,6 @@ import { Button } from "@/ui/design_system/typography/button/botton";
 }
 export const RegisterForm = ({form}:Props) =>{
     const {
-        control,
         onSubmit,
         errors,
         isLoading,

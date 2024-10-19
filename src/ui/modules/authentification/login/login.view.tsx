@@ -4,8 +4,13 @@ import { Typography } from "@/ui/design_system/typography/typography"
 import Link from "next/link"
 import { Box } from "@/ui/design_system/box/box"
 import { LoginForm } from "./login.form"
+import { FormsType } from "@/types/form"
 
-export const LoginView= ()=>{
+interface Props{
+    form: FormsType
+}
+
+export const LoginView= ({form}:Props)=>{
     return(
         <Containers className="grid grid-cols-2 gap-20 mb-32">
           
@@ -22,7 +27,7 @@ export const LoginView= ()=>{
                     
                     
                     <Typography variant="h5" component="h1" >
-                        Inscription
+                        Connexion
                     </Typography>
                
                 <div className="flex items-center gap-2">
@@ -36,7 +41,7 @@ export const LoginView= ()=>{
                   </div>        
         </div>
      
-        <LoginForm/>
+        <LoginForm form ={form}/>
                
               </Box>
            </div>
