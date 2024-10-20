@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form"
 import { RegisterView } from "./register.view"
 import { RegisterFormFieldsType } from "@/types/form"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { firebaseCreateUser } from "@/api/authentification"
 
@@ -10,7 +10,9 @@ import { useToggle } from "@/hooks/use-toggle"
 
 
 
+
 export const RegisterContainer= ()=>{
+
    const { value: isLoading,setValue: setIsloading,toggle}=useToggle();
     const {
         handleSubmit,
