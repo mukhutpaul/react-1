@@ -10,24 +10,25 @@ import { Logo } from "@/ui/design_system/logo/logo";
 import { Button } from "@/ui/design_system/typography/button/botton";
 import { Spinner } from "@/ui/design_system/typography/spinner/spinner";
 import { Typography } from "@/ui/design_system/typography/typography";
-import { UserAccountContainer } from "@/ui/modules/user-profile/user-account/user-account-container";
 
 
 import { RiUser6Fill } from "react-icons/ri";
 
 
 
-export default function UserAccount(){
+export default function OnBoarding(){
   return (
     <>
   
-    <Seo title="Mon espace" description="Description de la page" />
+    <Seo title="OnBoarding" description="Description de la page onboarding" />
 
-    <Layout isDisplayBreadCrumbs={true} withSideBar sessionStatus={REGISTERED}>
-      <UserAccountContainer/>
+    <Layout  sessionStatus={REGISTERED}>
+       <div className="flex items-center justify-center py-40 pt-20">
+        Welcom to onboarding
+       </div>
     </Layout>
     
   </>
-
+ 
   )
 }

@@ -20,7 +20,7 @@ export const Avatar = ({size = "medium",src,alt} : Props) => {
             break
 
         case "large":
-            sizeStyles="w-[500px] h-[500px]"
+            sizeStyles="w-[50px] h-[50px]"
             break
     
         default:
@@ -31,7 +31,7 @@ export const Avatar = ({size = "medium",src,alt} : Props) => {
         <div className={clsx(sizeStyles,"bg-gray-400 rounded-full relative")}>
            <Image
            fill
-           src={src}
+           src={src ? src :"/assets/images/cercle.avif"}
            alt={alt}
            
         //    width={50}

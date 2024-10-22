@@ -6,13 +6,28 @@ import { Button } from "@/ui/design_system/typography/button/botton"
 import Link from "next/link"
 import { ActiveLink } from "./active-link"
 import { useAuth } from "@/context/authUserContext"
+import { AccountAvatarNavigationLink } from "./account-avatar-link"
 
 interface Props{}
 
 export const Navigation = ({}: Props) => {
-    const { authUser,authUserIsLoading } = useAuth();
+    const { authUser } = useAuth();
     console.log("authUser",authUser)
-    console.log("authUserIsloading",authUserIsLoading)
+
+    const authentificationSystem = (
+        <div className="flex items-center gap-2">
+        <Button baseUrl="/connexion">
+        Connexion
+        </Button>
+        <Button baseUrl="/connexion/inscription" variant="secondary">
+        Rejoindre
+        </Button>
+        
+        </div>
+    
+    )
+
+    
     return(
         <div className="border border-gray-400">
             
@@ -44,12 +59,7 @@ export const Navigation = ({}: Props) => {
                     <ActiveLink href="/contact">Contact</ActiveLink>
                 </Typography>
           
-                    <div className="flex items-center gap-2">
-                    <Button baseUrl="/connexion">Connexion</Button>
-                    <Button baseUrl="/connexion/inscription" variant="secondary">Rejoindre</Button>
-                    
-                    </div>
-                
+                {!authUser ? authentificationSystem:<AccountAvatarNavigationLink/>}
                 
                 
               </div>

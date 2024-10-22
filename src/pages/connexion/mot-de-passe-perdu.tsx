@@ -1,3 +1,4 @@
+import { GUEST } from "@/lib/session-status";
 import { Layout } from "@/ui/components/layout/layout";
 import { Seo } from "@/ui/components/seo/seo";
 import { ForgotPasswordContainer } from "@/ui/modules/authentification/forgotPassword/forget.password.container";
@@ -7,7 +8,7 @@ export default function ForgotPasseword(){
       <>
     
       <Seo title="Mot de passe oublié" description="Mot de passe oublié" />
-      <Layout>
+      <Layout sessionStatus={GUEST}>
         <ForgotPasswordContainer/>
       </Layout>
       
