@@ -43,11 +43,15 @@ export const Navigation = ({}: Props) => {
                     <ActiveLink href="/formation">Formation</ActiveLink>
                     <ActiveLink href="/contact">Contact</ActiveLink>
                 </Typography>
-                <div className="flex items-center gap-2 flex-2">
+                {!authUser ?(
+                    <div className="flex items-center gap-2">
                     <Button baseUrl="/connexion">Connexion</Button>
                     <Button baseUrl="/connexion/inscription" variant="secondary">Rejoindre</Button>
                     
-                </div>
+                    </div>
+                ): (
+                    "hello boy"
+                )}
                 
                 
               </div>
