@@ -4,14 +4,23 @@ import { Footer } from "../navigation/footer"
 import { Navigation } from "../navigation/navigation"
 import { Containers } from "../container/container";
 import { UserAccountNavigation } from "../navigation/user-account-navigation";
+import { Session } from "inspector/promises";
+import { Sessions } from "../session/session";
+
 
 
 interface Props {
     children:React.ReactNode;
     isDisplayBreadCrumbs?:boolean
-    withSideBar?:boolean
+    withSideBar?:boolean,
+    sessionStatus?:string;
 }
-export const Layout = ({children,isDisplayBreadCrumbs=true,withSideBar}:Props) => {
+export const Layout = ({
+    children,
+    isDisplayBreadCrumbs=true,
+    withSideBar,
+    sessionStatus,
+}:Props) => {
     let view : React.ReactElement = <></>;
 
     if(withSideBar){
@@ -32,11 +41,11 @@ export const Layout = ({children,isDisplayBreadCrumbs=true,withSideBar}:Props) =
     }
 
     return(
-        <>
+        <Sessions sessionStatus={sessionStatus}>
         <Navigation/>
         { isDisplayBreadCrumbs && <BreadCrumbs/>}
         {view}
         <Footer/>
-        </>
+        </Sessions>
     )
 }

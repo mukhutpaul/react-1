@@ -41,7 +41,6 @@ export const firebaseSignInUser = async (email:string,password:string) =>{
 
 export const firebaseLogOutUser = async () =>{
     try{
-
         await signOut(auth);
 
         return {data: true};
@@ -49,7 +48,7 @@ export const firebaseLogOutUser = async () =>{
         //@... format l'error
         const firebaseError = error as FirebaseError
         return {error:{
-            code:firebaseError.code,
+            code:firebaseError.code, 
             message: firebaseError.message
         }
  

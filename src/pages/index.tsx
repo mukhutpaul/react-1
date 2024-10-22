@@ -21,7 +21,7 @@ export default function Home(){
     <>
   
     <Seo title="App Nextjs" description="description" />
-    <Layout isDisplayBreadCrumbs={false}>
+    <Layout isDisplayBreadCrumbs={false} sessionStatus="registered">
       <LandingPageContainer/>
     </Layout>
     

@@ -1,5 +1,6 @@
 import { auth, db } from "@/config/firebase-config";
 import { UserDocument, UserInterface } from "@/types/user";
+import { unsubscribe } from "diagnostics_channel";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -51,8 +52,8 @@ export default function userFirebaseAuth(){
     }
 
     useEffect(() =>{
-       const subscribe = onAuthStateChanged(auth,authStateChanged); 
-        return subscribe()
+       const unsubscribe = onAuthStateChanged(auth,authStateChanged); 
+        return () =>unsubscribe()
     },[]);
 
     return {
