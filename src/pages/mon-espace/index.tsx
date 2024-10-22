@@ -1,4 +1,5 @@
 
+import { REGISTERED } from "@/lib/session-status";
 import { Containers } from "@/ui/components/container/container";
 import { Layout } from "@/ui/components/layout/layout";
 import { Footer } from "@/ui/components/navigation/footer";
@@ -22,7 +23,7 @@ export default function Home(){
   
     <Seo title="Mon espace" description="Description de la page" />
 
-    <Layout isDisplayBreadCrumbs={true} withSideBar>
+    <Layout isDisplayBreadCrumbs={true} withSideBar sessionStatus={REGISTERED}>
       <UserAccountContainer/>
     </Layout>
     

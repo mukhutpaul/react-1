@@ -2,10 +2,11 @@ import { Spinner } from "@/ui/design_system/typography/spinner/spinner"
 import { ScreenSpinner } from "./screen-spinner"
 import { useAuth } from "@/context/authUserContext"
 import { useRouter } from "next/router"
+import { SessionStatusTypes } from "@/types/session-Status-Type"
 
 interface Props {
     children: React.ReactNode,
-    sessionStatus?:string
+    sessionStatus?:SessionStatusTypes
 }
 
 export const Sessions =({children,sessionStatus}: Props) => {
@@ -22,7 +23,7 @@ export const Sessions =({children,sessionStatus}: Props) => {
 
     }
 
-    if(!authUserIsLoading){
+    if(!sessionStatus && !authUserIsLoading){
         return <>{children}</>
     }
     return <ScreenSpinner/>
