@@ -29,7 +29,7 @@ import { RiLinkedinFill, RiStackFill, RiStackshareFill, RiStackshareLine, RiYout
  const foorterUserLinks:AppLink[] = [
     {
         label:"Mon espace",
-        baseUrl:"/#",
+        baseUrl:"/mon-espace",
         type:"internal",
     },
 

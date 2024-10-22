@@ -7,9 +7,9 @@ import Link from "next/link";
 
 interface Props  { 
     size?: "small" | "medium" | "large";
-    variant?: "accent" | "secondary" | "outline" | "ico" | "disabled" | "success";
+    variant?: "accent" | "secondary" | "outline" | "ico" | "disabled" | "success"| "danger";
     icon? :IconProp;
-    iconTheme?: "accent" | "secondary" | "gray";
+    iconTheme?: "accent" | "secondary" | "gray" ;
     iconPosition?: "left" | "right";
     disabled?: boolean;
     isLoading?: boolean;
@@ -45,6 +45,10 @@ export const Button = ({
     switch (variant) {
         case "accent": 
             variantStyle ="bg-primary hover:bg-primary-400 text-white rounded"
+            
+            break;
+        case "danger": 
+            variantStyle ="bg-alert-danger hover:alert-danger/75 text-white rounded"
             
             break;
         case "secondary": 

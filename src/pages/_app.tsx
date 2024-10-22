@@ -2,10 +2,12 @@ import "@/styles/globals.css";
 import "react-toastify/dist/ReactToastify.css"
 import type { AppProps } from "next/app";
 import {Flip, ToastContainer} from "react-toastify"
+import { AuthUserProvider } from "@/context/authUserContext";
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (<>
+  return (
+  <AuthUserProvider>
     <ToastContainer
     position="top-center"
     autoClose ={8000}
@@ -13,6 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
      />
 
     <Component {...pageProps} />
-    </>
+    </AuthUserProvider>
   );
 }

@@ -16,26 +16,26 @@ export const BreadCrumbs = () => {
 
     const view = segments.map((path,index) =>(
         <div key={uuidv4()} className="flex items-center">
-            <Link href={ index > 0 ? `/${segments.slice(1,index + 1).join("/")}`:"/"}
+            <Link  href={ index > 0 ? `/${segments.slice(1,index + 1).join("/")}`:"/"}
             
             > 
             <Typography variant="caption3" component="span" className={clsx(
-                path !== lastSegment ? "text-gray-600":"text-gray","capitalize hover:text-gray animate"
+                path !== lastSegment ? "text-gray-600":"text-gray","capitalize hover:text-gray animate "
             )}>
                 
-                {path !=="accueil" ? (path.replace(/-/g," ")): ( <RiHome3Line className="inline -mt-1"/>)}
+                {path !== "accueil" ? (path.replace(/-/g," ")):(<RiHome3Line className="inline mt-6"/>)}
                 
             </Typography>
             { 
             path !== lastSegment && (
-            <Typography variant="caption2" component="span" className="ml-2 text-gray-600">
+            <Typography variant="caption3" component="span" className="ml-2 text-gray-600 ">
                 /
             </Typography>
             )}
             
             </Link>
         </div>
-    ))
+    ));
  
     return (
     <Containers className="flex items-center gap-2 py-7">{view}</Containers>

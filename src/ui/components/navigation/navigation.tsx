@@ -5,10 +5,14 @@ import { Typography } from "@/ui/design_system/typography/typography"
 import { Button } from "@/ui/design_system/typography/button/botton"
 import Link from "next/link"
 import { ActiveLink } from "./active-link"
+import { useAuth } from "@/context/authUserContext"
 
 interface Props{}
 
 export const Navigation = ({}: Props) => {
+    const { authUser,authUserIsLoading } = useAuth();
+    console.log("authUser",authUser)
+    console.log("authUserIsloading",authUserIsLoading)
     return(
         <div className="border border-gray-400">
             
