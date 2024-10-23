@@ -71,7 +71,16 @@ export const ProfielStep = ({
     const onSubmit:SubmitHandler<OnBoardingProfileFormFieldsType> = async(formData) =>{
         setIsloading(true)
         console.log("formData",formData)
-        handleUpdateUserDocument(formData) 
+        
+
+        if(displayName !== formData.displayName ||
+            expertise !== formData.expertise ||
+            biography !== formData.biography)
+        {
+            handleUpdateUserDocument(formData) 
+        }
+        setIsloading(false)
+        next()
     }
     
     return(
