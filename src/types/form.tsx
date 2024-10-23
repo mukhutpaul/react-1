@@ -20,3 +20,9 @@ export interface LoginFormFieldsType{
 export interface ForgetFormFieldsType{
     email: string;
 }
+
+export interface OnBoardingProfileFormFieldsType{
+    displayName: string;
+    expertise: string;
+    biography:string;
+}

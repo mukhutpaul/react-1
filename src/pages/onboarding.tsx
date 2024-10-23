@@ -5,11 +5,13 @@ import { Layout } from "@/ui/components/layout/layout";
 import { Footer } from "@/ui/components/navigation/footer";
 import { Navigation } from "@/ui/components/navigation/navigation";
 import { Seo } from "@/ui/components/seo/seo";
+import { Sessions } from "@/ui/components/session/session";
 import { Avatar } from "@/ui/design_system/avatar/avatar";
 import { Logo } from "@/ui/design_system/logo/logo";
 import { Button } from "@/ui/design_system/typography/button/botton";
 import { Spinner } from "@/ui/design_system/typography/spinner/spinner";
 import { Typography } from "@/ui/design_system/typography/typography";
+import { OnboardingContainer } from "@/ui/modules/onboarding/components/onboarding.container";
 
 
 import { RiUser6Fill } from "react-icons/ri";
@@ -22,11 +24,12 @@ export default function OnBoarding(){
   
     <Seo title="OnBoarding" description="Description de la page onboarding" />
 
-    <Layout  sessionStatus={REGISTERED}>
-       <div className="flex items-center justify-center py-40 pt-20">
-        Welcom to onboarding
-       </div>
-    </Layout>
+  
+      <Sessions sessionStatus={REGISTERED}>
+        <OnboardingContainer/>
+        
+      </Sessions>
+      
     
   </>
  

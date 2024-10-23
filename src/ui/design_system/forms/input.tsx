@@ -11,6 +11,7 @@ interface Props {
     id: string
     required?:boolean;
     isAutoCompleted?: boolean;
+    label?:string;
 }
 
 export const Input = ({ 
@@ -22,10 +23,18 @@ export const Input = ({
     errorMsg="Tu dois renseigner ce champ",
     id,
     required = true,
-    isAutoCompleted=false}:Props) =>{
+    isAutoCompleted=false,
+    label}:Props) =>{
 
     return(
         <div className="space-y-2">
+            {label && (
+                <Typography variant="caption3" component="div" theme={errors[id]?"danger":"gray-600"}>
+                    {label}
+                </Typography>
+            )
+                
+            }
         <input type={type} 
         placeholder={placeholder}
         className={clsx(
